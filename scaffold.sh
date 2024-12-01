@@ -24,7 +24,18 @@ Link: https://adventofcode.com/2024/day/$day
 EOF
 
 cat >$directory/main.rs <<EOF
-fn main() {
-    println!("Hello, world!");
+use std::{
+    fs::File,
+    io::{BufRead, BufReader},
+    path::Path,
+};
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let base: &Path = Path::new("src/bin/day$day");
+
+    let file = File::open(base.join("input.txt"))?;
+    let reader = BufReader::new(file);
+
+    Ok(())
 }
 EOF
