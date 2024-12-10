@@ -16,6 +16,8 @@ fi
 # create the directory
 mkdir $directory
 
+touch $directory/input.txt
+
 # create the files
 cat >$directory/challenge.md <<EOF
 # Day $day
