@@ -2,7 +2,7 @@
 day=$1
 if [ -z $day ]; then
     # figure out the next day
-    day=$(ls src/bin | sort -n | tail -n 1 | sed 's/day//')
+    day=$(ls src/bin | sed 's/day//' | sort -n | tail -n 1)
     day=$((day + 1))
 fi
 
